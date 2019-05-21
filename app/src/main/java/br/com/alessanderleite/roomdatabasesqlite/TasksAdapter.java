@@ -29,8 +29,18 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TasksViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TasksViewHolder tasksViewHolder, int i) {
+    public void onBindViewHolder(@NonNull TasksViewHolder holder, int position) {
+        Task task = taskList.get(position);
 
+        holder.textViewTask.setText(task.getTask());
+        holder.textViewDesc.setText(task.getDesc());
+        holder.textViewFinishBy.setText(task.getFinishBy());
+
+        if (task.isFinished()) {
+            holder.textViewStatus.setText("Completed");
+        } else {
+            holder.textViewStatus.setText("Not Completed");
+        }
     }
 
     @Override
