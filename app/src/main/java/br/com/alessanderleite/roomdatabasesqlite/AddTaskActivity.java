@@ -86,5 +86,8 @@ public class AddTaskActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Saved into SQLite database", Toast.LENGTH_LONG).show();
             }
         }
+
+        SaveTask saveTask = new SaveTask();
+        saveTask.execute();
     }
 }
